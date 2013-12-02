@@ -1,0 +1,45 @@
+float   collisionPoint;
+integer clear = FALSE;
+float   clearTimer;
+
+default
+{
+    
+    state_entry()
+    {
+        collisionPoint = 0;
+        llSetTimerEvent (1.00);
+    }
+    
+    collision_start(integer num)
+    {
+        collisionPoint ++;
+        llMessageLinked(LINK_SET, 0, "collision+", NULL_KEY);
+        if (collisionPoint >=6)llMessageLinked(LINK_ROOT, 0, "Crash", NULL_KEY);
+    }
+
+    collision_end(integer total_number)
+    {
+        clear = TRUE;
+    }
+
+    link_message(integer sender, integer num, string message, key id)
+    {
+        if(message == "collision+") collisionPoint ++;
+        if(message == "CrashReset") {collisionPoint = 0; clearTimer = 0; clear = FALSE;}
+    }
+    
+    timer()
+    {
+//        llSetText((string)llRound(collisionPoint), <1,1,1>, 1);
+        llSetText("", <0,0,0>, 0);
+        if (clear == TRUE){ 
+            clearTimer ++;
+            if (clearTimer >= 300){
+                collisionPoint = 0; 
+                clear = FALSE;
+                llMessageLinked(LINK_SET, 0, "collisionClear", NULL_KEY);}
+                //Collision Point cleared   
+        }
+    }
+}
