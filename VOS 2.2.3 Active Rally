@@ -2,7 +2,11 @@
 // Autoworks VOS 2.3 Beta (Active Rally)
 // Written by Angie Xenga | Ed Zaurak | August 2012
 //
-// Active Drift and Crash Logic // Dec. 8 2013
+// Active Drift and Crash Logic.
+// Optimized, Copy & Paste back. // Dec. 8 2013
+//
+// (For Crash Logic - Must add a toggle script in a linked prim
+// sending LINK_SET message "CrashActive" or "CrashNotActive")
 //
 // Insert Fuel to Linear function of Drift
 // Fix Continue drift after slip drift off. // Nov. 29 2013
@@ -24,12 +28,14 @@
 //
 // A derivative script work from D> Concept Car by Damen Hax
 // with ZMO Autoworks Engine Script Snipbits & Additions
-// This is the result of 2 year LSL research (+ additional time from others)
+// This is the result of 2+ year LSL research (+ additional time from others)
 // Offered to you Free without any warranty or service.
 // That means "No Help" will be given from Any Staff of ZMO Autoworks.
 // All Script writing including custom work requests will be ignored.
 // So if you mess it up...good luck.
 // Remember Always to keep an original and work off copies.
+//
+// Do something creative and inspire other to do the same!
 //////////////////////////////////////////////////////////////////////
 
 
@@ -38,11 +44,10 @@
 /////For Personal Settings
 ////////////////////////////// Engine Startup settings
 START_UP(){
-Access = "Owner"; //Owner or Public
-ActiveRally = TRUE;
-ActiveRallyAngle = 1.4; //Drift Goes Active at this banking Angle.
-
-Crash_Active = FALSE;
+Access = "Owner";	//Owner or Public
+ActiveRally = TRUE;	//Rally goes active with banking angle below.
+ActiveRallyAngle = 1.4;	//Drift Goes Active at this banking Angle.
+Crash_Active = FALSE;	//Crash is in-active on start
 
 Gear_Power = [-30, 0, 15, 30, 50, 70, 90, 110, 130, 150, 175, 200];
 NumGear_Power = 12; // 15 is Max for Text hud display.
@@ -953,13 +958,5 @@ default
 //////////////////////////////////////////////////////////////////////
 
 // NOTE: //////////////////////////////////////////////////////////////////////
-//
 // Any script without this GNU title might not be free. Use at your own risk.
-//
-// Once in a while Math Error will show up with certain key combination.
-// Once you are in the vehicle, Press the Forward key, the error will disappear.
-// Have a feeling it's in the VEHICLE_LINEAR_MOTOR_TIMESCALE.
-// Hopefully that will be resolved in the future versions.
-//
-// Do something creative and inspire other to do the same!
 //////////////////////////////////////////////////////////////////////
