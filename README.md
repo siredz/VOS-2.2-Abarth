@@ -1,7 +1,6 @@
 VOS
 ===
 
-Secondlife Vehicle Operating System
-Secondlife Vehicle Open Source
-
-whichever you like.
+Secondlife Vehicle Operating System.
+Secondlife Vehicle Open Source.
+Whichever you like.
