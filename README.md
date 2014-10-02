@@ -30,9 +30,9 @@ if(CurDir == DIR_RELEASE)dDir = 0;<br>
 float VMT_EQ = Fuel*Diff;<br>
 float LSD_EQ = Drift_Angle*( (0.01*Drift_Push*Linear.y)/(0.000001+Linear.x) ); // LSD_EQ can not be aboslute 0<br>
 <br>
-//Other parts of burnout subroutine goes here
-
-llSetVehicleVectorParam(VEHICLE_LINEAR_MOTOR_DIRECTION, <Linear.x, dDir*LSD_EQ, Linear.z>);
-llSetVehicleFloatParam(VEHICLE_LINEAR_MOTOR_TIMESCALE, VLMT+VMT_EQ);
-
+//Other parts of burnout subroutine goes here<br>
+<br>
+llSetVehicleVectorParam(VEHICLE_LINEAR_MOTOR_DIRECTION, <Linear.x, dDir*LSD_EQ, Linear.z>);<br>
+llSetVehicleFloatParam(VEHICLE_LINEAR_MOTOR_TIMESCALE, VLMT+VMT_EQ);<br>
+<br>
 <h6>(End Subroutine)</h6>
