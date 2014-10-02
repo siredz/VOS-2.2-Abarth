@@ -2,27 +2,6 @@
 // Autoworks VOS 2.3 Beta (Active Rally)
 // Written by Angie Xenga | Ed Zaurak | August 2012
 //
-// Hud Fix // Dec. 11 2013
-//
-// Active Drift and Crash Logic // Dec. 8 2013
-//
-// Insert Fuel to Linear function of Drift
-// Fix Continue drift after slip drift off. // Nov. 29 2013
-//
-// Overhaul Burnout and Drift to Mass/Gravity. // Nov 14, 2013
-//
-// Optimized, Copy & Paste back. // July 4 2013
-//
-// Glitch with Gas and Linear Motor fix // August 26 2012
-//
-// Additional script works and addedom from 6.2nc
-// Added 6.2nc Slip Min. Attached Braking Function
-// Flight Launch Logic and HillvsFlatland Logic // July 1 2013
-//
-// Small Fix with Burnout and Multi-Key Control Error // July 2 2013
-//
-// Enhanced Burnout.
-// Relocate Skid Sound from Child to Root Prim  // July 4 2013
 //
 // A derivative script work from D> Concept Car by Damen Hax
 // with ZMO Autoworks Engine Script Snipbits & Additions
@@ -914,6 +893,7 @@ default
         if(message == "CrashNotActive") {CrashOFF();}
     }    
 }//End default
+
 
 // Additional Info ////////////////////////////////////////////////////
 //////Sculpts, Textures, Animations, Sounds///////////////////////////
