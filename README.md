@@ -7,20 +7,21 @@ Whichever you like.
 
 
 
-Drift Extra: To mimic Torque/Differential. Use VLMT (or VEHICLE_LINEAR_MOTOR_TIMESCALE). 
-
-Also Side push in VEHICLE_LINEAR_MOTOR_DIRECTION.
+<h5>Drift Extra: <br>
+To mimic Torque/Differential. <br>
+Use VLMT (or VEHICLE_LINEAR_MOTOR_TIMESCALE).<br>
+Also Side push in VEHICLE_LINEAR_MOTOR_DIRECTION.</h5>
 
 ----- do not copy this or above to script. Also (Subroutine), (End Subroutine) or (Outside Subroutine and default {} ) -----
 
-(Outside Subroutine and default {} )
+<h6>(Outside Subroutine and default {} )</h6>
 
 float DriftAngle = ;//Extra Steering Control
 float PUSH = ; // Tire, Ground and Velocity in Y axis
 float Diff = ;//Higher number to increase torque.
 
 
-(Subroutine)
+<h6>(Subroutine)</h6>
 
 float dDir;
 if(CurDir == DIR_RIGHT)dDir = 1;
@@ -34,4 +35,4 @@ float LSD_EQ = Drift_Angle*( (0.01*Drift_Push*Linear.y)/(0.000001+Linear.x) ); /
 llSetVehicleVectorParam(VEHICLE_LINEAR_MOTOR_DIRECTION, <Linear.x, dDir*LSD_EQ, Linear.z>);
 llSetVehicleFloatParam(VEHICLE_LINEAR_MOTOR_TIMESCALE, VLMT+VMT_EQ);
 
-(End Subroutine)
+<h6>(End Subroutine)</h6>
