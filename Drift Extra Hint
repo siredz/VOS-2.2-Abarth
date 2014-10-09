@@ -8,8 +8,8 @@ Also Side push in VEHICLE_LINEAR_MOTOR_DIRECTION.
 (Outside Subroutine and default {} )
 
 float DriftAngle = ;//Extra Steering Control
-float PUSH = ; // Tire, Ground and Velocity in Y axis
-float Diff = ;//Higher number to increase torque.
+float PUSH = ; // Tire friction and Velocity in Y axis
+float Diff = ;//Higher number to increase torque over speed. Lower for instantanious tourque and speed.
 
 (Subroutine)
 
@@ -26,3 +26,6 @@ llSetVehicleVectorParam(VEHICLE_LINEAR_MOTOR_DIRECTION, <Linear.x, dDir*LSD_EQ, 
 llSetVehicleFloatParam(VEHICLE_LINEAR_MOTOR_TIMESCALE, VLMT+VMT_EQ);
 
 (End Subroutine)
+
+(Left Right Control routine)
+//multiply DriftAngle to turn equation.
